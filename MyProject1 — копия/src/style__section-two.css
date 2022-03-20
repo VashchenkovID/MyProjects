@@ -1,0 +1,71 @@
+/*-------------------------------Секция "продукция для аграрной промышленности---------------------------*/
+.production {
+    
+  
+    padding:0;
+}
+
+.production__title {
+    padding-top: 81px;
+
+    font-weight: bold;
+font-size: 48px;
+line-height: 59px;
+}
+.production__text {
+    font-size: 18px;
+line-height: 30px;
+
+
+}
+.production__text__style {
+}
+.production__table {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: left;
+}
+.production__tuble__section:not(:first-child) {
+    margin-left: 70px;
+  
+}
+.production__table__section__list {
+    padding: 0;
+}
+.production__table__section__list__title-item {
+    font-weight: bold;
+font-size: 80px;
+line-height: 98px;
+
+color: #CDBD84;
+}
+#production__table__section__list__title-item__font-size{
+    font-size:18px ;
+    color: #CDBD84;
+}
+.production__table__section__list__subtitle-item {
+    text-align: left;
+    width: 157px;
+}
+/*-------------------------------------------Адаптация-------------------*/
+@media (max-width:800px) {
+    .production__tuble__section:not(:first-child) {
+        margin-left: 10px;
+    } 
+  
+}
+@media (max-width:450px) {
+    ._container{
+        margin-left: 16px;
+    }
+    .production__title{
+        font-size: 26px;
+line-height: 32px;
+text-align: center;
+    }
+    .production__tuble__section:not(:first-child) {
+        margin-left: 30px;
+    } 
+}

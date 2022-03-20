@@ -1,0 +1,141 @@
+.services__title{
+    font-weight: bold;
+font-size: 40px;
+line-height: 49px;
+
+color: #222222;
+ padding-top: 39px;
+}
+.services__content{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.services__content__icon {
+    width: 630px;
+}
+.services__content__icon__img {
+    width: 630px;
+height: 240px;
+padding: 0;
+margin: 0;
+}
+.services__content__icon__img__list {
+    font-weight: bold;
+    font-size: 72px;
+    line-height: 88px;
+
+    color: rgba(255, 255, 255, 0.5);
+    padding-left: 516px;
+    padding-top: 136px;
+}
+.services__content__icon__title {
+    font-weight: 600;
+font-size: 22px;
+line-height: 27px;
+color: #69A54D;
+}
+.services__content__icon__subtitle {
+    font-weight: normal;
+font-size: 16px;
+line-height: 24px;
+/* or 150% */
+
+
+color: #222222;
+
+}
+#icon__margin{
+    margin-left:30px ;
+}
+/*----------------------------------------Slider Services-----------------*/
+.services__slider{
+   
+    max-width: 100%;
+
+    overflow: hidden;
+}
+.services__slider-line {
+    display: flex;
+    transition: all ease 1s;
+   width: 100%;
+   height: auto;
+    
+}
+.services__slider-item{
+    display: flex;
+   
+    flex-direction: row;
+   
+   justify-content: flex-start;
+}
+
+.services__btn {
+    position: absolute;
+    z-index: 60;
+    left: 1456px;
+    top: 4132px;
+}
+.button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.services__slider-prev {
+    width: 62px;
+height: 39px;
+
+}
+.services__slider-next {
+    width: 62px;
+height: 39px;
+margin-left: 20px;
+
+}
+
+/*----------------------------------Слайд 1 -----------*/
+.slider-item__icon {
+    width: 410px;
+    
+}
+.slider-item__icon:not(:first-child) {
+    margin-left: 30px;
+    
+}
+.slider-item__icon__img {
+    width: 410px;
+height: 240px;
+}
+.slider-item__icom__list {
+    padding-left: 0;
+}
+.list__title {
+    font-style: normal;
+font-weight: 600;
+font-size: 22px;
+line-height: 27px;
+
+color: #69A54D;
+padding-top: 15px;
+
+}
+.list__date {
+    font-weight: 600;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+padding-top: 15px;
+
+color: #CAC1A0;
+}
+.list__text {
+    font-weight: normal;
+font-size: 16px;
+line-height: 24px;
+padding-top: 15px;
+}
+/*---------------------------------Слайд 2 -----------*/
+#item-two{
+    padding-left: 40px;
+}
