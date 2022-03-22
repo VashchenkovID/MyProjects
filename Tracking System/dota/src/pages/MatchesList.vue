@@ -69,7 +69,18 @@ export default {
             "https://api.opendota.com/api/proMatches"
           );
           this.matches = response.data;
-           console.log(this.matches);
+
+          const request = await axios.get(
+            `https://api.opendota.com/api/heroStats`
+          );
+          this.heroItem = request.data;
+          const detail = sessionStorage.getItem("detail");
+          console.log(this.heroItem);
+          if (detail) {
+            this.details = JSON.parse(detail);
+          }
+
+          // Деструктуризация данных
         }, 100);
       } catch (e) {
         alert("Ошибка");
@@ -81,15 +92,15 @@ export default {
         this.isMatchLoading = true;
         setTimeout(() => {
           this.isMatchLoading = false;
-          // Обработка полученных данных ( разделил на 100 массивов по 10 объектов)
+          // Обработка полученных данных ( разделил на 10 массивов по 10 объектов)
           const count = parseInt(this.matches.length / 10);
+
           for (let i = 0; i < count; i++) {
             this.loadMoreArr.push(this.matches.slice(i * 10, i * 10 + 10));
           }
+
           // На случай, если количество объектов превысит 1000 остаток будет заноситься в последний массив
-          if (count * 10 < this.matches.length) {
-            this.loadMoreArr.push(this.matches.slice(count * 10));
-          }
+
           // Разделил 100 массивов по одному
           for (let i = 0; i < this.loadMoreArr.length; i++) {
             let size = 10;
@@ -101,11 +112,13 @@ export default {
               this.arr = this.loadMoreArr[i].slice(i * size, i * size + size);
             }
           }
+
           // Выводим 10 объектов и тут же удаляем их из массива с данными (не из исходного)
           for (let i = 0; i < this.arr.length; i++) {
             this.postsMatches.push(this.arr[i]);
-            this.loadMoreArr.shift(this.loadMoreArr[i]);
           }
+          this.loadMoreArr.shift(this.postsMatches);
+
           return this.postsMatches;
         }, 1000);
       } catch (e) {
@@ -124,8 +137,8 @@ export default {
       // Добавляем 10 объектов и стираем их из данных
       for (let i = 0; i < this.arr.length; i++) {
         this.postsMatches.push(this.arr[i]);
-        this.loadMoreArr.shift(this.loadMoreArr[i]);
       }
+      this.loadMoreArr.shift(this.postsMatches);
     },
     showBurger() {
       this.isBurgerVisible = true;
@@ -134,7 +147,6 @@ export default {
   mounted() {
     this.fetchMatches();
     this.addMatches();
-   
   },
 };
 </script>

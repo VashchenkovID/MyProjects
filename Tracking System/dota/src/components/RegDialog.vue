@@ -1,37 +1,48 @@
 <template>
   <div class="dialog" v-if="reg === true" @click.stop="closeDialog">
     <slot>
-      
-      <div  class="content">
-        <button>Х</button>
+      <div class="content">
+        <button class="closer">Х</button>
         <div @click.stop class="content__container">
           <div class="content__title">Регистрация</div>
           <form class="cont__form">
             <div class="cont__flex">
               <label class="form__label" for="email"> E-mail </label>
               <input
-              :value="email" 
-              @input="email = $event.target.value"
-               class="form__input" name="email" type="email" />
+                :value="email"
+                @input="email = $event.target.value"
+                class="form__input"
+                name="email"
+                type="email"
+              />
               <label class="form__label" for="email">Логин </label>
               <input
-              :value="login" 
-              @input="login = $event.target.value"
-               class="form__input" name="login" type="text" />
+                :value="login"
+                @input="login = $event.target.value"
+                class="form__input"
+                name="login"
+                type="text"
+              />
             </div>
             <div class="cont__flex">
               <label class="form__label" for="password">Пароль </label>
-              <input 
-              :value="password" 
-              @input="password = $event.target.value"
-              class="form__input" name="password" type="text" />
+              <input
+                :value="password"
+                @input="password = $event.target.value"
+                class="form__input"
+                name="password"
+                type="text"
+              />
               <label class="form__label" for="password"
                 >Повторите пароль
               </label>
-              <input 
-              :value="passwordTwo" 
-              @input="passwordTwo = $event.target.value"
-              class="form__input" name="password" type="text" />
+              <input
+                :value="passwordTwo"
+                @input="passwordTwo = $event.target.value"
+                class="form__input"
+                name="password"
+                type="text"
+              />
             </div>
           </form>
           <div class="checkbox">
@@ -48,13 +59,13 @@
 
 <script>
 export default {
-  data(){
-    return{
-      email: '',
-      login: '',
-      password: '',
-      passwordTwo: '',
-    }
+  data() {
+    return {
+      email: "",
+      login: "",
+      password: "",
+      passwordTwo: "",
+    };
   },
   props: {
     reg: {
@@ -79,6 +90,19 @@ export default {
   right: 0;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
+}
+.closer {
+ border: none;
+ background-color: #fff;
+  padding: 23px 23px 0px 0px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 19px;
+  cursor: pointer;
+  margin-left: 800px;
+
 }
 .content {
   z-index: 100;
@@ -140,7 +164,7 @@ export default {
   background: #7540f0;
   border-radius: 4px;
   margin-left: 180px;
-margin-bottom: 40px;
+  margin-bottom: 40px;
   font-family: Inter;
   font-style: normal;
   font-weight: 500;

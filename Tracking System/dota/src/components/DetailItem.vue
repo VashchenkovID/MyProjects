@@ -111,7 +111,7 @@ export default {
           this.heroName = heroes[key].localized_name;
         }
       }
-      console.log(this.heroImg);
+
     },
   },
 
@@ -119,6 +119,7 @@ export default {
     this.requestProfile();
 
     this.destructionHeroes();
+  
 
   },
 };

@@ -43,7 +43,9 @@ export default {
   methods: {},
 
   components: { DetailItem },
-  mounted() {},
+  mounted() {
+   
+  },
 };
 </script>
 

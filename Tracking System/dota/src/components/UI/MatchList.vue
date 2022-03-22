@@ -5,6 +5,7 @@
     <div class="tab-column" id="rad">Radiant</div>
     <div class="tab-column" id="dire">Dire</div>
   </div>
+
   <div :key="match.id" v-for="match in matches">
     <ul>
       <li class="item">
@@ -57,7 +58,7 @@ export default {
   font-size: 16px;
   line-height: 19px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 ul {
   margin: 0;

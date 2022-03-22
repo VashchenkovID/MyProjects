@@ -130,6 +130,8 @@ export default {
             `https://api.opendota.com/api/heroStats`
           );
           this.heroItem = response.data;
+
+          
           const detail = sessionStorage.getItem("detail");
 
           if (detail) {
@@ -145,6 +147,7 @@ export default {
             result.heroes = this.heroItem;
             this.players.push(result);
           }
+
         }, 10);
       } catch (e) {
         alert("Ошибка");

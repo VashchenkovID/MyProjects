@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/details"
+  <router-link class="link" to="/details"
     ><div class="container" @click="detailMatch">
       <div id="id">
         <div class="container__id">{{ match.match_id }}</div>
@@ -8,25 +8,11 @@
       <div class="column">
         {{ timeMatch() }}
       </div>
-      <div class="column">
-        <div class="flex">
-          <div class="hero-img"></div>
-          <div class="hero-img"></div>
-          <div class="hero-img"></div>
-          <div class="hero-img"></div>
-          <div class="hero-img"></div>
-        </div>
-      </div>
-      <div class="column">
-        <div class="flex">
-          <div class="hero-img"></div>
-          <div class="hero-img"></div>
-          <div class="hero-img"></div>
-          <div class="hero-img"></div>
-          <div class="hero-img"></div>
-        </div>
-      </div></div
-  ></router-link>
+
+      <div class="radiant">{{ match.radiant_name }}</div>
+      <div class="dire">{{ match.dire_name }}</div>
+    </div></router-link
+  >
 </template>
 
 <script>
@@ -70,12 +56,18 @@ export default {
       var seconds = new Date(currentDate).getSeconds();
       return `${minutes}:${seconds}`;
     },
+    destruction() {
+  
+    },
+  },
+  mounted() {
+    this.destruction();
   },
 };
 </script>
 
 <style scoped>
-#router-link {
+.link {
   color: #e0d8ff;
 }
 .container {
@@ -104,9 +96,23 @@ export default {
 }
 .container__start-time {
 }
-.hero-img {
-  background: url(@/components/img/Matches/Heroes.jpg);
-  width: 48px;
-  height: 27px;
+.radiant {
+  margin-left: 180px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+  color: #bbdd00;
+  width: 200px;
+}
+.dire {
+  margin-left: 230px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+  color: #bbdd00;
 }
 </style>
